@@ -23,23 +23,26 @@ class _Contaner1State extends State<Contaner1> {
             children: [
               Container(
                 child: Image.asset(widget.image),
-                height: 70,
+                height: 60,
                 width: 70,
                 decoration: BoxDecoration(
                     border: Border.all(color: Colors.pink, width: 4),
                     borderRadius: BorderRadius.circular(20)),
               ),
               SizedBox(
-                height: 15,
+                height: 10,
               ),
-              Text(widget.name),
+              Text(
+                widget.name,
+                style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+              ),
             ],
           )
         : Column(
             children: [
               Container(
                 child: Image.asset(widget.image),
-                height: 70,
+                height: 60,
                 width: 70,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -51,7 +54,10 @@ class _Contaner1State extends State<Contaner1> {
               SizedBox(
                 height: 5,
               ),
-              Text(widget.name),
+              Text(
+                widget.name,
+                style: TextStyle(fontSize: 10),
+              ),
             ],
           );
   }

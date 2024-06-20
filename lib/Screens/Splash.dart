@@ -1,15 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food/Screens/screen2.dart';
+import 'package:food/Screens/sign%20in%20screen.dart';
 
-class Screen1 extends StatefulWidget {
-  const Screen1({super.key});
+class Splash extends StatefulWidget {
+  const Splash({super.key});
 
   @override
-  State<Screen1> createState() => _Screen1State();
+  State<Splash> createState() => _Screen1State();
 }
 
-class _Screen1State extends State<Screen1> {
+class _Screen1State extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -84,7 +84,7 @@ class _Screen1State extends State<Screen1> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => HomePage(),
+                        builder: (context) => Signin(),
                       ));
                 },
                 child: Text(

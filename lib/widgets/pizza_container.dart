@@ -61,11 +61,11 @@ class pizzacontainer extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
           Image.asset(image),
           SizedBox(
-            height: 10,
+            height: 5,
           ),
           addbotton(
             icons: Icon(

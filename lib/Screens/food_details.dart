@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food/service/service.dart';
 import 'package:food/widgets/add_button.dart';
 
 class Fooddetails extends StatefulWidget {
@@ -302,7 +303,16 @@ class _FooddetailsState extends State<Fooddetails> {
                   child: ElevatedButton(
                       style:
                           ElevatedButton.styleFrom(backgroundColor: Colors.red),
-                      onPressed: () {},
+                      onPressed: () {
+                        adddata(
+                            image: widget.image,
+                            name: widget.name,
+                            qty: start,
+                            rate: rate,
+                            pmethod: 'Cash on delivery',
+                            amount: result);
+                        Navigator.pop(context);
+                      },
                       child: Text(
                         'Add to cart',
                         style: TextStyle(
