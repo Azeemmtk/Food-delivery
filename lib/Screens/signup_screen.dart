@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food/Screens/sign%20in%20screen.dart';
+import 'package:food/utils/const.dart';
 
 import '../widgets/cusom text.dart';
 
@@ -15,7 +16,7 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA),
+      backgroundColor: secondaycolor,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

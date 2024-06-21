@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:food/Screens/home_screen.dart';
 import 'package:food/Screens/recover_password_screen.dart';
 import 'package:food/Screens/signup_screen.dart';
+import 'package:food/utils/const.dart';
 
 import '../widgets/cusom text.dart';
 
@@ -19,7 +20,7 @@ class _SigninState extends State<Signin> {
     double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA),
+      backgroundColor: secondaycolor,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

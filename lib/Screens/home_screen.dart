@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food/Screens/cart_screen.dart';
+import 'package:food/Screens/help_screen.dart';
 import 'package:food/Screens/profile.dart';
 
+import '../utils/const.dart';
 import '../widgets/container1.dart';
 import '../widgets/pizza_container.dart';
 
@@ -78,6 +80,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       drawer: Drawer(
           child: ListView(
         padding: EdgeInsets.zero,
@@ -85,7 +88,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           SizedBox(
             height: 110,
             child: DrawerHeader(
-              decoration: BoxDecoration(color: Color(0xFFf87d7c)),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    maincolor,
+                    Colors.black,
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
               child: Text(
                 'Menu',
                 style: TextStyle(
@@ -105,9 +117,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             },
             leading: Icon(
               Icons.home_filled,
-              color: Color(0xFFf87d7c),
+              color: maincolor,
             ),
-            title: Text('Home', style: TextStyle(color: Color(0xFFf87d7c))),
+            title: Text('Home', style: TextStyle(color: maincolor)),
           ),
           ListTile(
             onTap: () {
@@ -119,11 +131,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             },
             leading: Icon(
               CupertinoIcons.cart,
-              color: Color(0xFFf87d7c),
+              color: maincolor,
             ),
             title: Text(
               'Cart',
-              style: TextStyle(color: Color(0xFFf87d7c)),
+              style: TextStyle(
+                color: maincolor,
+              ),
             ),
           ),
           ListTile(
@@ -134,13 +148,47 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     builder: (context) => Profile(),
                   ));
             },
-            leading: Icon(
+            leading: const Icon(
               CupertinoIcons.profile_circled,
-              color: Color(0xFFf87d7c),
+              color: Color(0xFF7298c4),
             ),
-            title: Text(
+            title: const Text(
               'Profile',
-              style: TextStyle(color: Color(0xFFf87d7c)),
+              style: TextStyle(
+                color: Color(0xFF7298c4),
+              ),
+            ),
+          ),
+          ListTile(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Contact(),
+                  ));
+            },
+            leading: const Icon(
+              Icons.contact_support,
+              color: Color(0xFF7298c4),
+            ),
+            title: const Text(
+              'Contact',
+              style: TextStyle(
+                color: Color(0xFF7298c4),
+              ),
+            ),
+          ),
+          ListTile(
+            onTap: () {},
+            leading: const Icon(
+              Icons.feedback,
+              color: Color(0xFF7298c4),
+            ),
+            title: const Text(
+              'Feedback',
+              style: TextStyle(
+                color: Color(0xFF7298c4),
+              ),
             ),
           ),
         ],
@@ -169,18 +217,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Hi Azeem',
-                  style: TextStyle(fontSize: 20, color: Color(0xFFEB5757))),
-              SizedBox(height: 8),
-              Text('Find your Delicious Food',
-                  style: TextStyle(
-                    fontSize: 24,
-                  )),
-              SizedBox(height: 20),
+              Text(
+                'Hi Azeem',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Text(
+                'Find your Delicious Food',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
               DefaultTabController(
                 length: imglist.length,
                 child: SingleChildScrollView(
@@ -236,7 +290,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               name: imglist[2]['text']),
                         ),
                       ]),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       SizedBox(
@@ -246,12 +300,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             child: GridView.builder(
                               // scrollDirection: Axis.vertical,
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2, // Number of columns
                                 crossAxisSpacing: 10.0,
                                 mainAxisSpacing: 10.0,
                                 childAspectRatio:
-                                    0.63, // Adjust aspect ratio as needed
+                                    0.73, // Adjust aspect ratio as needed
                               ),
                               itemCount: popularItems.length,
                               itemBuilder: (context, index) {
@@ -267,12 +321,33 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           Container(
                             child: GridView.builder(
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 2, // Number of columns
+                                      crossAxisSpacing: 10.0,
+                                      mainAxisSpacing: 10.0,
+                                      childAspectRatio:
+                                          0.73 // Adjust aspect ratio as needed
+                                      ),
+                              itemCount: popularItems.length,
+                              itemBuilder: (context, index) {
+                                return pizzacontainer(
+                                  name: popularItems[index]['name'],
+                                  image: popularItems[index]['image'],
+                                  price: popularItems[index]['price'],
+                                  calori: popularItems[index]['calori'],
+                                );
+                              },
+                            ),
+                          ),
+                          Container(
+                            child: GridView.builder(
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2, // Number of columns
                                 crossAxisSpacing: 10.0,
                                 mainAxisSpacing: 10.0,
                                 childAspectRatio:
-                                    0.63, // Adjust aspect ratio as needed
+                                    0.73, // Adjust aspect ratio as needed
                               ),
                               itemCount: popularItems.length,
                               itemBuilder: (context, index) {
@@ -288,33 +363,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           Container(
                             child: GridView.builder(
                               gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2, // Number of columns
                                 crossAxisSpacing: 10.0,
                                 mainAxisSpacing: 10.0,
                                 childAspectRatio:
-                                    0.63, // Adjust aspect ratio as needed
-                              ),
-                              itemCount: popularItems.length,
-                              itemBuilder: (context, index) {
-                                return pizzacontainer(
-                                  name: popularItems[index]['name'],
-                                  image: popularItems[index]['image'],
-                                  price: popularItems[index]['price'],
-                                  calori: popularItems[index]['calori'],
-                                );
-                              },
-                            ),
-                          ),
-                          Container(
-                            child: GridView.builder(
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2, // Number of columns
-                                crossAxisSpacing: 10.0,
-                                mainAxisSpacing: 10.0,
-                                childAspectRatio:
-                                    0.63, // Adjust aspect ratio as needed
+                                    0.73, // Adjust aspect ratio as needed
                               ),
                               itemCount: popularItems.length,
                               itemBuilder: (context, index) {

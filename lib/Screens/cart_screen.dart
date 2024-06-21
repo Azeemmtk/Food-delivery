@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food/service/service.dart';
+import 'package:food/utils/const.dart';
 
 double subtotal() {
   double sum = 0;
@@ -24,7 +25,18 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFFf87d7c),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                maincolor,
+                Colors.black,
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
         title: const Row(
           children: [
             SizedBox(
@@ -143,7 +155,7 @@ class _CartState extends State<Cart> {
                                           fontWeight: FontWeight.bold),
                                     ),
                                     Text(
-                                      Data[index]['Amount'].toString(),
+                                      Data[index]['Amount'].toStringAsFixed(2),
                                       style: const TextStyle(fontSize: 18),
                                     ),
                                     const SizedBox(
@@ -158,7 +170,7 @@ class _CartState extends State<Cart> {
                                       icon: const SizedBox(
                                         child: Icon(
                                           Icons.delete,
-                                          color: Color(0xFFf87d7c),
+                                          color: Color(0xFF7298c4),
                                         ),
                                       ),
                                     ),
@@ -170,7 +182,7 @@ class _CartState extends State<Cart> {
                                       icon: const SizedBox(
                                         child: Icon(
                                           Icons.add_circle,
-                                          color: Color(0xFFf87d7c),
+                                          color: Color(0xFF7298c4),
                                         ),
                                       ),
                                     ),
@@ -240,7 +252,8 @@ class _CartState extends State<Cart> {
                     child: ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFFf87d7c)),
+                        backgroundColor: Color(0xFF7298c4),
+                      ),
                       child: const Text(
                         'Check out',
                         style: TextStyle(
@@ -258,7 +271,8 @@ class _CartState extends State<Cart> {
                       child: ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFFf87d7c)),
+                          backgroundColor: maincolor,
+                        ),
                         child: const Text(
                           'Place Order',
                           style: TextStyle(

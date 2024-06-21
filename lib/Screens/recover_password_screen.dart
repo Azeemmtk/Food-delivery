@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/utils/const.dart';
 
 import '../widgets/cusom text.dart';
 
@@ -13,7 +14,7 @@ class _SigninState extends State<Passrecover> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F9FA),
+      backgroundColor: secondaycolor,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

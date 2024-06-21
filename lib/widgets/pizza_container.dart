@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food/Screens/food_details.dart';
+import 'package:food/utils/const.dart';
 
-import 'add_button.dart';
+import '../Screens/food_details.dart';
 
 class pizzacontainer extends StatelessWidget {
   pizzacontainer(
@@ -19,17 +18,21 @@ class pizzacontainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 270,
+      height: 250,
       width: 170,
       decoration: BoxDecoration(
+        color: secondaycolor,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(
-          color: CupertinoColors.inactiveGray,
-        ),
+        // border: Border.all(
+        //   color: CupertinoColors.inactiveGray,
+        // ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(
+            height: 3,
+          ),
           Text(
             name,
             style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
@@ -55,7 +58,7 @@ class pizzacontainer extends StatelessWidget {
                 '$calori calories',
                 style: TextStyle(
                   fontSize: 18,
-                  color: Color(0xFFEB5757),
+                  color: Colors.black,
                 ),
               ),
             ],
@@ -63,28 +66,45 @@ class pizzacontainer extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          Image.asset(image),
           SizedBox(
-            height: 5,
+            height: 135,
+            width: 135,
+            child: Image.asset(image),
           ),
-          addbotton(
-            icons: Icon(
-              CupertinoIcons.add,
-              color: Colors.white,
-            ),
-            ontap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Fooddetails(
-                    name: name,
-                    calori: calori,
-                    image: image,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Fooddetails(
+                        name: name,
+                        calori: calori,
+                        image: image,
+                      ),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    color: maincolor,
+                    borderRadius: BorderRadius.only(
+                      bottomRight: Radius.circular(20),
+                      topLeft: Radius.circular(20),
+                    ),
+                  ),
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.white,
                   ),
                 ),
-              );
-            },
-          )
+              ),
+            ],
+          ),
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:food/Screens/Splash.dart';
 
-import 'Screens/home_screen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -12,7 +12,7 @@ void main() async {
   runApp(
     MaterialApp(
       debugShowMaterialGrid: false,
-      home: HomePage(),
+      home: Splash(),
     ),
   );
 }

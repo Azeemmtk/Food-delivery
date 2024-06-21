@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/utils/const.dart';
 
 class Contaner1 extends StatefulWidget {
   Contaner1(
@@ -26,7 +27,7 @@ class _Contaner1State extends State<Contaner1> {
                 height: 60,
                 width: 70,
                 decoration: BoxDecoration(
-                    border: Border.all(color: Colors.pink, width: 4),
+                    border: Border.all(color: maincolor, width: 4),
                     borderRadius: BorderRadius.circular(20)),
               ),
               SizedBox(

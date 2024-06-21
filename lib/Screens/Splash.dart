@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food/Screens/sign%20in%20screen.dart';
+import 'package:food/utils/const.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -19,9 +20,15 @@ class _Screen1State extends State<Splash> {
         children: [
           Container(
             height: MediaQuery.of(context).size.height,
-            child: Image.asset(
-              'assets/images/Background.png',
-              fit: BoxFit.cover,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  maincolor,
+                  Colors.black,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
             ),
           ),
           Positioned(
@@ -55,9 +62,7 @@ class _Screen1State extends State<Splash> {
             child: Text(
               'Doorstep',
               style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.pink,
-                  fontSize: 35),
+                  fontWeight: FontWeight.bold, color: maincolor, fontSize: 35),
             ),
           ),
           Positioned(
@@ -72,29 +77,26 @@ class _Screen1State extends State<Splash> {
             ),
           ),
           Positioned(
-            top: 680,
-            left: 90,
-            child: Image.asset('assets/images/Rectangle 2.png'),
-          ),
-          Positioned(
-              top: 685,
-              left: 110,
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Signin(),
-                      ));
-                },
-                child: Text(
-                  'Get Started',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                      fontSize: 30),
+              top: 680,
+              left: 70,
+              child: SizedBox(
+                height: 50,
+                width: 250,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: maincolor),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Signin()));
+                  },
+                  child: Text(
+                    'Get Started',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        fontSize: 30),
+                  ),
                 ),
-              )),
+              ))
         ],
       ),
     );
