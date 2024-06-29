@@ -24,7 +24,14 @@ class pizzacontainer extends StatelessWidget {
       height: 250,
       width: 170,
       decoration: BoxDecoration(
-        color: secondaycolor,
+        gradient: LinearGradient(
+          colors: [
+            maincolor,
+            Colors.black,
+          ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
         borderRadius: BorderRadius.circular(20),
         // border: Border.all(
         //   color: CupertinoColors.inactiveGray,
@@ -38,10 +45,11 @@ class pizzacontainer extends StatelessWidget {
           ),
           Text(
             name,
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
           ),
           SizedBox(
-            height: 5,
+            height: 0,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -61,13 +69,13 @@ class pizzacontainer extends StatelessWidget {
                 '$calori calories',
                 style: TextStyle(
                   fontSize: 18,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               ),
             ],
           ),
           SizedBox(
-            height: 5,
+            height: 0,
           ),
           SizedBox(
             height: 135,

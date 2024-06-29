@@ -56,7 +56,7 @@ class _FastfoodsState extends State<Italianfoods> {
           crossAxisCount: 2, // Number of columns
           crossAxisSpacing: 10.0,
           mainAxisSpacing: 10.0,
-          childAspectRatio: 0.73, // Adjust aspect ratio as needed
+          childAspectRatio: 0.762, // Adjust aspect ratio as needed
         ),
         itemCount: popularItems.length,
         itemBuilder: (context, index) {

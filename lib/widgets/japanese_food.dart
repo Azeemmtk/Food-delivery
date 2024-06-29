@@ -11,38 +11,38 @@ class Japanesefoods extends StatefulWidget {
 class _FastfoodsState extends State<Japanesefoods> {
   List<Map> popularItems = [
     {
-      'name': 'Melting cheese',
-      'image': 'assets/images/Pizza 4.png',
+      'name': 'Champon',
+      'image': 'assets/images/Champon.png',
       'price': 9.47,
       'calori': '44'
     },
     {
-      'name': 'Pizza capricciosa',
-      'image': 'assets/images/Pizza 3.png',
+      'name': 'Kashi Pan',
+      'image': 'assets/images/Kashi Pan.png',
       'price': 12.47,
       'calori': '55'
     },
     {
-      'name': 'Melting cheese',
-      'image': 'assets/images/Pizza 4.png',
+      'name': 'Natto',
+      'image': 'assets/images/Natto.png',
       'price': 9.47,
       'calori': '44'
     },
     {
-      'name': 'Pizza capricciosa',
-      'image': 'assets/images/Pizza 3.png',
+      'name': 'Sashimi',
+      'image': 'assets/images/Sashimi.png',
       'price': 12.47,
       'calori': '55'
     },
     {
-      'name': 'Melting cheese',
-      'image': 'assets/images/Pizza 4.png',
+      'name': 'Sushii',
+      'image': 'assets/images/Sushii.png',
       'price': 9.47,
       'calori': '44'
     },
     {
-      'name': 'Pizza capricciosa',
-      'image': 'assets/images/Pizza 3.png',
+      'name': 'Udon',
+      'image': 'assets/images/Udon.png',
       'price': 12.47,
       'calori': '55'
     },
@@ -56,7 +56,7 @@ class _FastfoodsState extends State<Japanesefoods> {
           crossAxisCount: 2, // Number of columns
           crossAxisSpacing: 10.0,
           mainAxisSpacing: 10.0,
-          childAspectRatio: 0.73, // Adjust aspect ratio as needed
+          childAspectRatio: 0.762, // Adjust aspect ratio as needed
         ),
         itemCount: popularItems.length,
         itemBuilder: (context, index) {
