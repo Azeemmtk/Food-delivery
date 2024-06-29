@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food/Screens/italian_japan_sea_details.dart';
 import 'package:food/utils/const.dart';
 
 import '../Screens/food_details.dart';
@@ -9,11 +10,13 @@ class pizzacontainer extends StatelessWidget {
       required this.name,
       required this.image,
       required this.price,
-      required this.calori});
+      required this.calori,
+      this.intexx});
   String name;
   String calori;
   double price;
   String image;
+  int? intexx;
 
   @override
   Widget build(BuildContext context) {
@@ -76,16 +79,29 @@ class pizzacontainer extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Fooddetails(
-                        name: name,
-                        calori: calori,
-                        image: image,
+                  if (intexx == 0) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Fooddetails(
+                          name: name,
+                          calori: calori,
+                          image: image,
+                        ),
                       ),
-                    ),
-                  );
+                    );
+                  } else {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FooddetailsItaJapSea(
+                          name: name,
+                          calori: calori,
+                          image: image,
+                        ),
+                      ),
+                    );
+                  }
                 },
                 child: Container(
                   width: 40,

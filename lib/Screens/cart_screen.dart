@@ -85,7 +85,7 @@ class _CartState extends State<Cart> {
                               ),
                             ),
                             const SizedBox(
-                              width: 10,
+                              width: 5,
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,8 +114,8 @@ class _CartState extends State<Cart> {
                                     ),
                                   ],
                                 ),
-                                const SizedBox(
-                                  height: 7,
+                                SizedBox(
+                                  height: 5,
                                 ),
                                 Row(
                                   children: [
@@ -142,9 +142,6 @@ class _CartState extends State<Cart> {
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ],
-                                ),
-                                const SizedBox(
-                                  height: 0,
                                 ),
                                 Row(
                                   children: [

@@ -3,10 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:food/Screens/cart_screen.dart';
 import 'package:food/Screens/help_screen.dart';
 import 'package:food/Screens/profile.dart';
+import 'package:food/widgets/fast_food.dart';
+import 'package:food/widgets/italian_food.dart';
+import 'package:food/widgets/japanese_food.dart';
+import 'package:food/widgets/sea_food.dart';
 
 import '../utils/const.dart';
 import '../widgets/container1.dart';
-import '../widgets/pizza_container.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -287,7 +290,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           child: Contaner1(
                               isClicked: selectedIndux == 3,
                               image: imglist[3]['img'],
-                              name: imglist[2]['text']),
+                              name: imglist[3]['text']),
                         ),
                       ]),
                       const SizedBox(
@@ -296,91 +299,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       SizedBox(
                         height: MediaQuery.of(context).size.height / 1.5,
                         child: TabBarView(controller: tabcontrol, children: [
-                          Container(
-                            child: GridView.builder(
-                              // scrollDirection: Axis.vertical,
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2, // Number of columns
-                                crossAxisSpacing: 10.0,
-                                mainAxisSpacing: 10.0,
-                                childAspectRatio:
-                                    0.73, // Adjust aspect ratio as needed
-                              ),
-                              itemCount: popularItems.length,
-                              itemBuilder: (context, index) {
-                                return pizzacontainer(
-                                  name: popularItems[index]['name'],
-                                  image: popularItems[index]['image'],
-                                  price: popularItems[index]['price'],
-                                  calori: popularItems[index]['calori'],
-                                );
-                              },
-                            ),
-                          ),
-                          Container(
-                            child: GridView.builder(
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 2, // Number of columns
-                                      crossAxisSpacing: 10.0,
-                                      mainAxisSpacing: 10.0,
-                                      childAspectRatio:
-                                          0.73 // Adjust aspect ratio as needed
-                                      ),
-                              itemCount: popularItems.length,
-                              itemBuilder: (context, index) {
-                                return pizzacontainer(
-                                  name: popularItems[index]['name'],
-                                  image: popularItems[index]['image'],
-                                  price: popularItems[index]['price'],
-                                  calori: popularItems[index]['calori'],
-                                );
-                              },
-                            ),
-                          ),
-                          Container(
-                            child: GridView.builder(
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2, // Number of columns
-                                crossAxisSpacing: 10.0,
-                                mainAxisSpacing: 10.0,
-                                childAspectRatio:
-                                    0.73, // Adjust aspect ratio as needed
-                              ),
-                              itemCount: popularItems.length,
-                              itemBuilder: (context, index) {
-                                return pizzacontainer(
-                                  name: popularItems[index]['name'],
-                                  image: popularItems[index]['image'],
-                                  price: popularItems[index]['price'],
-                                  calori: popularItems[index]['calori'],
-                                );
-                              },
-                            ),
-                          ),
-                          Container(
-                            child: GridView.builder(
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2, // Number of columns
-                                crossAxisSpacing: 10.0,
-                                mainAxisSpacing: 10.0,
-                                childAspectRatio:
-                                    0.73, // Adjust aspect ratio as needed
-                              ),
-                              itemCount: popularItems.length,
-                              itemBuilder: (context, index) {
-                                return pizzacontainer(
-                                  name: popularItems[index]['name'],
-                                  image: popularItems[index]['image'],
-                                  price: popularItems[index]['price'],
-                                  calori: popularItems[index]['calori'],
-                                );
-                              },
-                            ),
-                          ),
+                          Fastfoods(intex: selectedIndux),
+                          Italianfoods(),
+                          Japanesefoods(),
+                          Seafoods(),
                         ]),
                       ),
                     ],

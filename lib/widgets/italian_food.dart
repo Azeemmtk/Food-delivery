@@ -1,49 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:food/widgets/pizza_container.dart';
 
-class Fastfoods extends StatefulWidget {
-  Fastfoods({super.key, this.intex});
+class Italianfoods extends StatefulWidget {
+  const Italianfoods({super.key});
 
-  int? intex;
   @override
-  State<Fastfoods> createState() => _FastfoodsState();
+  State<Italianfoods> createState() => _FastfoodsState();
 }
 
-class _FastfoodsState extends State<Fastfoods> {
+class _FastfoodsState extends State<Italianfoods> {
   List<Map> popularItems = [
     {
-      'name': 'Melting cheese',
-      'image': 'assets/images/Pizza 4.png',
+      'name': 'Mushroom Risotto',
+      'image': 'assets/images/Gourmet Mushroom Risotto.png',
       'price': 9.47,
       'calori': '44'
     },
     {
-      'name': 'Pizza capricciosa',
-      'image': 'assets/images/Pizza 3.png',
+      'name': 'Fried Risotto',
+      'image': 'assets/images/Italian Fried Risotto.png',
       'price': 12.47,
       'calori': '55'
     },
     {
-      'name': 'Melting cheese',
-      'image': 'assets/images/Pizza 4.png',
+      'name': 'Lasagna',
+      'image': 'assets/images/Lasagna.png',
       'price': 9.47,
       'calori': '44'
     },
     {
-      'name': 'Pizza capricciosa',
-      'image': 'assets/images/Pizza 3.png',
+      'name': 'Osso Buco',
+      'image': 'assets/images/Osso Buco.png',
       'price': 12.47,
       'calori': '55'
     },
     {
-      'name': 'Melting cheese',
-      'image': 'assets/images/Pizza 4.png',
+      'name': 'Tomato Pesto',
+      'image': 'assets/images/Sicilian Tomato Pesto.png',
       'price': 9.47,
       'calori': '44'
     },
     {
-      'name': 'Pizza capricciosa',
-      'image': 'assets/images/Pizza 3.png',
+      'name': 'Risottati Vongole',
+      'image': 'assets/images/Spaghetti Risottati alle Vongole.png',
       'price': 12.47,
       'calori': '55'
     },
@@ -62,7 +61,6 @@ class _FastfoodsState extends State<Fastfoods> {
         itemCount: popularItems.length,
         itemBuilder: (context, index) {
           return pizzacontainer(
-            intexx: widget.intex,
             name: popularItems[index]['name'],
             image: popularItems[index]['image'],
             price: popularItems[index]['price'],

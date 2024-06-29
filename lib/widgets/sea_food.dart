@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:food/widgets/pizza_container.dart';
 
-class Fastfoods extends StatefulWidget {
-  Fastfoods({super.key, this.intex});
+class Seafoods extends StatefulWidget {
+  const Seafoods({super.key});
 
-  int? intex;
   @override
-  State<Fastfoods> createState() => _FastfoodsState();
+  State<Seafoods> createState() => _FastfoodsState();
 }
 
-class _FastfoodsState extends State<Fastfoods> {
+class _FastfoodsState extends State<Seafoods> {
   List<Map> popularItems = [
     {
       'name': 'Melting cheese',
@@ -62,7 +61,6 @@ class _FastfoodsState extends State<Fastfoods> {
         itemCount: popularItems.length,
         itemBuilder: (context, index) {
           return pizzacontainer(
-            intexx: widget.intex,
             name: popularItems[index]['name'],
             image: popularItems[index]['image'],
             price: popularItems[index]['price'],
